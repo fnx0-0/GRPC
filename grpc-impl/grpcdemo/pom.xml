@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.grpcproject</groupId>
+  <artifactId>grpcdemo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>grpcdemo</name>
+
+  <!-- ===================== -->
+  <!-- PROPERTIES -->
+  <!-- ===================== -->
+  <properties>
+    <java.version>1.8</java.version>
+    <grpc.version>1.15.1</grpc.version>
+    <protobuf.version>3.6.1</protobuf.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- ===================== -->
+  <!-- DEPENDENCIES -->
+  <!-- ===================== -->
+  <dependencies>
+
+    <!-- Protobuf runtime -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>${protobuf.version}</version>
+    </dependency>
+
+    <!-- gRPC dependencies -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+
+    <!-- Required for Java 9+ -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <!-- ===================== -->
+  <!-- BUILD -->
+  <!-- ===================== -->
+  <build>
+
+    <plugins>
+
+      <!-- Java Compiler -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+      <!-- PROTO + gRPC CODE GENERATION -->
+      <plugin>
+        <groupId>com.github.os72</groupId>
+        <artifactId>protoc-jar-maven-plugin</artifactId>
+        <version>3.6.0.1</version>
+
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+
+            <configuration>
+              <includeMavenTypes>direct</includeMavenTypes>
+
+              <!-- Where your .proto lives -->
+              <inputDirectories>
+                <include>src/main/resources</include>
+              </inputDirectories>
+
+              <!-- Generate Java directly into src/main/java -->
+              <outputTargets>
+
+                <!-- Protobuf messages -->
+                <outputTarget>
+                  <type>java</type>
+                  <outputDirectory>src/main/java</outputDirectory>
+                </outputTarget>
+
+                <!-- gRPC service stubs -->
+                <outputTarget>
+                  <type>grpc-java</type>
+                  <pluginArtifact>
+                    io.grpc:protoc-gen-grpc-java:${grpc.version}
+                  </pluginArtifact>
+                  <outputDirectory>src/main/java</outputDirectory>
+                </outputTarget>
+
+              </outputTargets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

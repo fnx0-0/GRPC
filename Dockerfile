@@ -1,15 +1,27 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y cmake build-essential git
+ENV http_proxy=
+ENV https_proxy=
+ENV HTTP_PROXY=
+ENV HTTPS_PROXY=
+
+RUN apt-get update && apt-get install -y \
+    ca-certificates \
+    cmake \
+    build-essential \
+    git \
+ && update-ca-certificates
 
 WORKDIR /dev
 
-# taken from gRPC page
-RUN git clone --recurse-submodules -b v1.62.0 --depth 1 --shallow-submodules \
+RUN git clone -b v1.62.0 \
+    --filter=blob:none \
     https://github.com/grpc/grpc.git
 
-RUN mkdir -p /deps/grpc/build && cd /deps/grpc/build && \
+RUN cd grpc && git submodule update --init --recursive --depth 1
+
+RUN mkdir -p grpc/build && cd grpc/build && \
     cmake -DgRPC_INSTALL=ON \
           -DgRPC_BUILD_TESTS=OFF \
           .. && \
-    make -j8 install
+    make -j$(nproc) install
