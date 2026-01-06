@@ -13,9 +13,6 @@
 
   <name>grpcdemo</name>
 
-  <!-- ===================== -->
-  <!-- PROPERTIES -->
-  <!-- ===================== -->
   <properties>
     <java.version>1.8</java.version>
     <grpc.version>1.15.1</grpc.version>
@@ -23,9 +20,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- ===================== -->
-  <!-- DEPENDENCIES -->
-  <!-- ===================== -->
   <dependencies>
 
     <!-- Protobuf runtime -->
@@ -71,14 +65,9 @@
 
   </dependencies>
 
-  <!-- ===================== -->
-  <!-- BUILD -->
-  <!-- ===================== -->
   <build>
 
     <plugins>
-
-      <!-- Java Compiler -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -105,21 +94,18 @@
             <configuration>
               <includeMavenTypes>direct</includeMavenTypes>
 
-              <!-- Where your .proto lives -->
               <inputDirectories>
                 <include>src/main/resources</include>
               </inputDirectories>
 
-              <!-- Generate Java directly into src/main/java -->
-              <outputTargets>
 
-                <!-- Protobuf messages -->
+              <outputTargets>
                 <outputTarget>
                   <type>java</type>
                   <outputDirectory>src/main/java</outputDirectory>
                 </outputTarget>
 
-                <!-- gRPC service stubs -->
+
                 <outputTarget>
                   <type>grpc-java</type>
                   <pluginArtifact>
