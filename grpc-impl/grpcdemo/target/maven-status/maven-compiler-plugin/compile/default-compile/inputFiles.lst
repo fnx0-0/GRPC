@@ -1,8 +1,4 @@
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LoginResponseOrBuilder.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LogoutResponseOrBuilder.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\UserProto.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LoginRequest.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LogoutResponse.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LoginRequestOrBuilder.java
+D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\userImpl\UserServiceImpl.java
+D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\User.java
+D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\grpcdemo\server\GrpcServer.java
 D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\UserServiceGrpc.java
-D:\GRPC\GRPC\grpc-impl\grpcdemo\src\main\java\com\javastub\grpc\LoginResponse.java
