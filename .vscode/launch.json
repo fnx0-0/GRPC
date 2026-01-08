@@ -3,6 +3,19 @@
   "configurations": [
     {
       "type": "java",
+      "name": "GrpcClient",
+      "request": "launch",
+      "mainClass": "com.GrpcClient"
+    },
+    {
+      "type": "java",
+      "name": "GrpcClient",
+      "request": "launch",
+      "mainClass": "com.GrpcClient",
+      "projectName": "grpcdemoclient"
+    },
+    {
+      "type": "java",
       "name": "GrpcServer",
       "request": "launch",
       "mainClass": "com.grpcdemo.server.GrpcServer",
