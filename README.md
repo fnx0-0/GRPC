@@ -1,2 +1,2 @@
 # GRPC
-grpc using c++
+grpc implementation
