@@ -10,7 +10,7 @@ public class GrpcServer {
 
     public static void main(String[] args) throws InterruptedException{
 
-        Server server = ServerBuilder.forPort(8083).addService(new UserServiceImpl()).build();
+        Server server = ServerBuilder.forPort(8083).addService(new UserServiceImpl()).build();//channel creation
 
         try {
             server.start();

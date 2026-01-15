@@ -91,6 +91,38 @@ public final class UserServiceGrpc {
      return getLogoutMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.javastub.grpc.User.StreamRequest,
+      com.javastub.grpc.User.StreamResponse> getGetLiveUpdatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getLiveUpdates",
+      requestType = com.javastub.grpc.User.StreamRequest.class,
+      responseType = com.javastub.grpc.User.StreamResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.javastub.grpc.User.StreamRequest,
+      com.javastub.grpc.User.StreamResponse> getGetLiveUpdatesMethod() {
+    io.grpc.MethodDescriptor<com.javastub.grpc.User.StreamRequest, com.javastub.grpc.User.StreamResponse> getGetLiveUpdatesMethod;
+    if ((getGetLiveUpdatesMethod = UserServiceGrpc.getGetLiveUpdatesMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getGetLiveUpdatesMethod = UserServiceGrpc.getGetLiveUpdatesMethod) == null) {
+          UserServiceGrpc.getGetLiveUpdatesMethod = getGetLiveUpdatesMethod = 
+              io.grpc.MethodDescriptor.<com.javastub.grpc.User.StreamRequest, com.javastub.grpc.User.StreamResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "UserService", "getLiveUpdates"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.javastub.grpc.User.StreamRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.javastub.grpc.User.StreamResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("getLiveUpdates"))
+                  .build();
+          }
+        }
+     }
+     return getGetLiveUpdatesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -119,6 +151,9 @@ public final class UserServiceGrpc {
   public static abstract class UserServiceImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     *unary
+     * </pre>
      */
     public void login(com.javastub.grpc.User.LoginRequest request,
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.LoginResponse> responseObserver) {
@@ -130,6 +165,16 @@ public final class UserServiceGrpc {
     public void logout(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.LogoutResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *streaming
+     * </pre>
+     */
+    public void getLiveUpdates(com.javastub.grpc.User.StreamRequest request,
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.StreamResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetLiveUpdatesMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -148,6 +193,13 @@ public final class UserServiceGrpc {
                 com.google.protobuf.Empty,
                 com.javastub.grpc.User.LogoutResponse>(
                   this, METHODID_LOGOUT)))
+          .addMethod(
+            getGetLiveUpdatesMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.javastub.grpc.User.StreamRequest,
+                com.javastub.grpc.User.StreamResponse>(
+                  this, METHODID_GET_LIVE_UPDATES)))
           .build();
     }
   }
@@ -171,6 +223,9 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     *unary
+     * </pre>
      */
     public void login(com.javastub.grpc.User.LoginRequest request,
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.LoginResponse> responseObserver) {
@@ -184,6 +239,17 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.LogoutResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *streaming
+     * </pre>
+     */
+    public void getLiveUpdates(com.javastub.grpc.User.StreamRequest request,
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.StreamResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetLiveUpdatesMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -206,6 +272,9 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     *unary
+     * </pre>
      */
     public com.javastub.grpc.User.LoginResponse login(com.javastub.grpc.User.LoginRequest request) {
       return blockingUnaryCall(
@@ -217,6 +286,17 @@ public final class UserServiceGrpc {
     public com.javastub.grpc.User.LogoutResponse logout(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), getLogoutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *streaming
+     * </pre>
+     */
+    public java.util.Iterator<com.javastub.grpc.User.StreamResponse> getLiveUpdates(
+        com.javastub.grpc.User.StreamRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetLiveUpdatesMethod(), getCallOptions(), request);
     }
   }
 
@@ -239,6 +319,9 @@ public final class UserServiceGrpc {
     }
 
     /**
+     * <pre>
+     *unary
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.javastub.grpc.User.LoginResponse> login(
         com.javastub.grpc.User.LoginRequest request) {
@@ -257,6 +340,7 @@ public final class UserServiceGrpc {
 
   private static final int METHODID_LOGIN = 0;
   private static final int METHODID_LOGOUT = 1;
+  private static final int METHODID_GET_LIVE_UPDATES = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -282,6 +366,10 @@ public final class UserServiceGrpc {
         case METHODID_LOGOUT:
           serviceImpl.logout((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<com.javastub.grpc.User.LogoutResponse>) responseObserver);
+          break;
+        case METHODID_GET_LIVE_UPDATES:
+          serviceImpl.getLiveUpdates((com.javastub.grpc.User.StreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.javastub.grpc.User.StreamResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -346,6 +434,7 @@ public final class UserServiceGrpc {
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getLoginMethod())
               .addMethod(getLogoutMethod())
+              .addMethod(getGetLiveUpdatesMethod())
               .build();
         }
       }

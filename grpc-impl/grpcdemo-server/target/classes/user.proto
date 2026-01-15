@@ -9,8 +9,15 @@ option java_package = "com.javastub.grpc";
 import "google/protobuf/empty.proto";
 
 service UserService {
+
+  //unary
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc Logout (google.protobuf.Empty) returns (LogoutResponse);
+
+  //streaming
+  rpc getLiveUpdates(StreamRequest) returns (stream StreamResponse);
+
+
 }
 
 message LoginRequest {
@@ -26,3 +33,14 @@ message LoginResponse {
 message LogoutResponse {
   string message = 1;
 }
+
+message StreamRequest{
+  string name = 1;
+  bool start = 2;
+}
+
+message StreamResponse{
+  string data = 1;
+  bool status = 2;
+}
+
