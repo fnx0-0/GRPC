@@ -3093,6 +3093,1149 @@ public final class User {
 
   }
 
+  public interface ClientStreamingReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ClientStreamingReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 price = 1;</code>
+     */
+    int getPrice();
+
+    /**
+     * <code>int32 quantity = 2;</code>
+     */
+    int getQuantity();
+
+    /**
+     * <code>bool status = 3;</code>
+     */
+    boolean getStatus();
+  }
+  /**
+   * Protobuf type {@code ClientStreamingReq}
+   */
+  public  static final class ClientStreamingReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ClientStreamingReq)
+      ClientStreamingReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientStreamingReq.newBuilder() to construct.
+    private ClientStreamingReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ClientStreamingReq() {
+      price_ = 0;
+      quantity_ = 0;
+      status_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientStreamingReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              price_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              quantity_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              status_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.javastub.grpc.User.internal_static_ClientStreamingReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.javastub.grpc.User.internal_static_ClientStreamingReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.javastub.grpc.User.ClientStreamingReq.class, com.javastub.grpc.User.ClientStreamingReq.Builder.class);
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 1;
+    private int price_;
+    /**
+     * <code>int32 price = 1;</code>
+     */
+    public int getPrice() {
+      return price_;
+    }
+
+    public static final int QUANTITY_FIELD_NUMBER = 2;
+    private int quantity_;
+    /**
+     * <code>int32 quantity = 2;</code>
+     */
+    public int getQuantity() {
+      return quantity_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 3;
+    private boolean status_;
+    /**
+     * <code>bool status = 3;</code>
+     */
+    public boolean getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (price_ != 0) {
+        output.writeInt32(1, price_);
+      }
+      if (quantity_ != 0) {
+        output.writeInt32(2, quantity_);
+      }
+      if (status_ != false) {
+        output.writeBool(3, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (price_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, price_);
+      }
+      if (quantity_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, quantity_);
+      }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.javastub.grpc.User.ClientStreamingReq)) {
+        return super.equals(obj);
+      }
+      com.javastub.grpc.User.ClientStreamingReq other = (com.javastub.grpc.User.ClientStreamingReq) obj;
+
+      boolean result = true;
+      result = result && (getPrice()
+          == other.getPrice());
+      result = result && (getQuantity()
+          == other.getQuantity());
+      result = result && (getStatus()
+          == other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getPrice();
+      hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getQuantity();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.javastub.grpc.User.ClientStreamingReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ClientStreamingReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ClientStreamingReq)
+        com.javastub.grpc.User.ClientStreamingReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.javastub.grpc.User.ClientStreamingReq.class, com.javastub.grpc.User.ClientStreamingReq.Builder.class);
+      }
+
+      // Construct using com.javastub.grpc.User.ClientStreamingReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        price_ = 0;
+
+        quantity_ = 0;
+
+        status_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingReq getDefaultInstanceForType() {
+        return com.javastub.grpc.User.ClientStreamingReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingReq build() {
+        com.javastub.grpc.User.ClientStreamingReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingReq buildPartial() {
+        com.javastub.grpc.User.ClientStreamingReq result = new com.javastub.grpc.User.ClientStreamingReq(this);
+        result.price_ = price_;
+        result.quantity_ = quantity_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.javastub.grpc.User.ClientStreamingReq) {
+          return mergeFrom((com.javastub.grpc.User.ClientStreamingReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.javastub.grpc.User.ClientStreamingReq other) {
+        if (other == com.javastub.grpc.User.ClientStreamingReq.getDefaultInstance()) return this;
+        if (other.getPrice() != 0) {
+          setPrice(other.getPrice());
+        }
+        if (other.getQuantity() != 0) {
+          setQuantity(other.getQuantity());
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.javastub.grpc.User.ClientStreamingReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.javastub.grpc.User.ClientStreamingReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int price_ ;
+      /**
+       * <code>int32 price = 1;</code>
+       */
+      public int getPrice() {
+        return price_;
+      }
+      /**
+       * <code>int32 price = 1;</code>
+       */
+      public Builder setPrice(int value) {
+        
+        price_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 price = 1;</code>
+       */
+      public Builder clearPrice() {
+        
+        price_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int quantity_ ;
+      /**
+       * <code>int32 quantity = 2;</code>
+       */
+      public int getQuantity() {
+        return quantity_;
+      }
+      /**
+       * <code>int32 quantity = 2;</code>
+       */
+      public Builder setQuantity(int value) {
+        
+        quantity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 quantity = 2;</code>
+       */
+      public Builder clearQuantity() {
+        
+        quantity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 3;</code>
+       */
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 3;</code>
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 3;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ClientStreamingReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:ClientStreamingReq)
+    private static final com.javastub.grpc.User.ClientStreamingReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.javastub.grpc.User.ClientStreamingReq();
+    }
+
+    public static com.javastub.grpc.User.ClientStreamingReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClientStreamingReq>
+        PARSER = new com.google.protobuf.AbstractParser<ClientStreamingReq>() {
+      @java.lang.Override
+      public ClientStreamingReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientStreamingReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ClientStreamingReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientStreamingReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.javastub.grpc.User.ClientStreamingReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ClientStreamingRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ClientStreamingResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 totalValue = 1;</code>
+     */
+    int getTotalValue();
+
+    /**
+     * <code>bool status = 2;</code>
+     */
+    boolean getStatus();
+  }
+  /**
+   * Protobuf type {@code ClientStreamingResp}
+   */
+  public  static final class ClientStreamingResp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ClientStreamingResp)
+      ClientStreamingRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ClientStreamingResp.newBuilder() to construct.
+    private ClientStreamingResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ClientStreamingResp() {
+      totalValue_ = 0;
+      status_ = false;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClientStreamingResp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              totalValue_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              status_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.javastub.grpc.User.internal_static_ClientStreamingResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.javastub.grpc.User.internal_static_ClientStreamingResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.javastub.grpc.User.ClientStreamingResp.class, com.javastub.grpc.User.ClientStreamingResp.Builder.class);
+    }
+
+    public static final int TOTALVALUE_FIELD_NUMBER = 1;
+    private int totalValue_;
+    /**
+     * <code>int32 totalValue = 1;</code>
+     */
+    public int getTotalValue() {
+      return totalValue_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private boolean status_;
+    /**
+     * <code>bool status = 2;</code>
+     */
+    public boolean getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (totalValue_ != 0) {
+        output.writeInt32(1, totalValue_);
+      }
+      if (status_ != false) {
+        output.writeBool(2, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (totalValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, totalValue_);
+      }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.javastub.grpc.User.ClientStreamingResp)) {
+        return super.equals(obj);
+      }
+      com.javastub.grpc.User.ClientStreamingResp other = (com.javastub.grpc.User.ClientStreamingResp) obj;
+
+      boolean result = true;
+      result = result && (getTotalValue()
+          == other.getTotalValue());
+      result = result && (getStatus()
+          == other.getStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTALVALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalValue();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.ClientStreamingResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.javastub.grpc.User.ClientStreamingResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ClientStreamingResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ClientStreamingResp)
+        com.javastub.grpc.User.ClientStreamingRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.javastub.grpc.User.ClientStreamingResp.class, com.javastub.grpc.User.ClientStreamingResp.Builder.class);
+      }
+
+      // Construct using com.javastub.grpc.User.ClientStreamingResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        totalValue_ = 0;
+
+        status_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.javastub.grpc.User.internal_static_ClientStreamingResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingResp getDefaultInstanceForType() {
+        return com.javastub.grpc.User.ClientStreamingResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingResp build() {
+        com.javastub.grpc.User.ClientStreamingResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.ClientStreamingResp buildPartial() {
+        com.javastub.grpc.User.ClientStreamingResp result = new com.javastub.grpc.User.ClientStreamingResp(this);
+        result.totalValue_ = totalValue_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.javastub.grpc.User.ClientStreamingResp) {
+          return mergeFrom((com.javastub.grpc.User.ClientStreamingResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.javastub.grpc.User.ClientStreamingResp other) {
+        if (other == com.javastub.grpc.User.ClientStreamingResp.getDefaultInstance()) return this;
+        if (other.getTotalValue() != 0) {
+          setTotalValue(other.getTotalValue());
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.javastub.grpc.User.ClientStreamingResp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.javastub.grpc.User.ClientStreamingResp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int totalValue_ ;
+      /**
+       * <code>int32 totalValue = 1;</code>
+       */
+      public int getTotalValue() {
+        return totalValue_;
+      }
+      /**
+       * <code>int32 totalValue = 1;</code>
+       */
+      public Builder setTotalValue(int value) {
+        
+        totalValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 totalValue = 1;</code>
+       */
+      public Builder clearTotalValue() {
+        
+        totalValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ClientStreamingResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:ClientStreamingResp)
+    private static final com.javastub.grpc.User.ClientStreamingResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.javastub.grpc.User.ClientStreamingResp();
+    }
+
+    public static com.javastub.grpc.User.ClientStreamingResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ClientStreamingResp>
+        PARSER = new com.google.protobuf.AbstractParser<ClientStreamingResp>() {
+      @java.lang.Override
+      public ClientStreamingResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClientStreamingResp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ClientStreamingResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClientStreamingResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.javastub.grpc.User.ClientStreamingResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LoginRequest_descriptor;
   private static final 
@@ -3118,6 +4261,16 @@ public final class User {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_StreamResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ClientStreamingReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ClientStreamingReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ClientStreamingResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ClientStreamingResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3133,12 +4286,17 @@ public final class User {
       "s\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\"!\n\016LogoutRespon" +
       "se\022\017\n\007message\030\001 \001(\t\",\n\rStreamRequest\022\014\n\004" +
       "name\030\001 \001(\t\022\r\n\005start\030\002 \001(\010\".\n\016StreamRespo" +
-      "nse\022\014\n\004data\030\001 \001(\t\022\016\n\006status\030\002 \001(\0102\235\001\n\013Us" +
-      "erService\022&\n\005Login\022\r.LoginRequest\032\016.Logi" +
-      "nResponse\0221\n\006Logout\022\026.google.protobuf.Em" +
-      "pty\032\017.LogoutResponse\0223\n\016getLiveUpdates\022\016" +
-      ".StreamRequest\032\017.StreamResponse0\001B\023\n\021com" +
-      ".javastub.grpcb\006proto3"
+      "nse\022\014\n\004data\030\001 \001(\t\022\016\n\006status\030\002 \001(\010\"E\n\022Cli" +
+      "entStreamingReq\022\r\n\005price\030\001 \001(\005\022\020\n\010quanti" +
+      "ty\030\002 \001(\005\022\016\n\006status\030\003 \001(\010\"9\n\023ClientStream" +
+      "ingResp\022\022\n\ntotalValue\030\001 \001(\005\022\016\n\006status\030\002 " +
+      "\001(\0102\344\001\n\013UserService\022&\n\005Login\022\r.LoginRequ" +
+      "est\032\016.LoginResponse\0221\n\006Logout\022\026.google.p" +
+      "rotobuf.Empty\032\017.LogoutResponse\0223\n\016getLiv" +
+      "eUpdates\022\016.StreamRequest\032\017.StreamRespons" +
+      "e0\001\022E\n\026ClientStreamingExample\022\023.ClientSt" +
+      "reamingReq\032\024.ClientStreamingResp(\001B\023\n\021co" +
+      "m.javastub.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3183,6 +4341,18 @@ public final class User {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StreamResponse_descriptor,
         new java.lang.String[] { "Data", "Status", });
+    internal_static_ClientStreamingReq_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_ClientStreamingReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ClientStreamingReq_descriptor,
+        new java.lang.String[] { "Price", "Quantity", "Status", });
+    internal_static_ClientStreamingResp_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_ClientStreamingResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ClientStreamingResp_descriptor,
+        new java.lang.String[] { "TotalValue", "Status", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

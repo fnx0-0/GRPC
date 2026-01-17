@@ -2,7 +2,10 @@ package com.userImpl;
 
 
 import java.util.concurrent.TimeUnit;
+import io.grpc.Status;
 
+import com.javastub.grpc.User.ClientStreamingReq;
+import com.javastub.grpc.User.ClientStreamingResp;
 import com.javastub.grpc.User.LoginResponse;
 import com.javastub.grpc.User.LogoutResponse;
 import com.javastub.grpc.User.StreamResponse;
@@ -25,7 +28,8 @@ public class UserServiceImpl extends UserServiceImplBase {
         if(password.length() > 0 && username.length()>0)
         {
              response.setMessage("Login Success ").setSuccess(true);
-        //     try{
+        //   wont be possible as this is used under blocking stub used for unary calls(Sync)  
+        //   try{
         //     for(int i=0 ; i<3 ; i++){
         //         response.setMessage("Login Success " + i).setSuccess(true);
         //         responseObserver.onNext(response.build());
@@ -82,5 +86,48 @@ public class UserServiceImpl extends UserServiceImplBase {
             responseObserver.onError(e);
         }
     }
+
+    @Override
+    public io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingReq> clientStreamingExample(
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingResp> responseObserver){
+
+            return new io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingReq>(){
+
+                private int totalVal = 0;                
+                private Boolean status = false;
+
+                @Override
+                public void onNext(ClientStreamingReq req){
+                    System.out.println("Data received " + req);
+
+                    if(req.getStatus()){
+                        totalVal += req.getQuantity() * req.getPrice();
+                        if(totalVal > 0) status = true;
+                    }
+                    else{
+                        responseObserver.onError(Status.INVALID_ARGUMENT.withDescription("Request status is false")
+                            .asRuntimeException()); 
+
+                            return;
+                            }
+                }
+
+                @Override
+                public void onCompleted(){
+        
+                    ClientStreamingResp resp = ClientStreamingResp.newBuilder().setTotalValue(totalVal).setStatus(status).build();
+                    responseObserver.onNext(resp);
+                    //System.out.println("Evaluation done from server side");
+                    responseObserver.onCompleted();
+                }
+
+                @Override
+                public void onError(Throwable e){
+                    System.out.println("Error on processing the request " + e.getMessage());
+                }
+
+            };
+
+        }
     
 }

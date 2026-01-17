@@ -14,8 +14,11 @@ service UserService {
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc Logout (google.protobuf.Empty) returns (LogoutResponse);
 
-  //streaming
+  //server streaming
   rpc getLiveUpdates(StreamRequest) returns (stream StreamResponse);
+
+  //client streaming
+  rpc ClientStreamingExample(stream ClientStreamingReq) returns(ClientStreamingResp);
 
 
 }
@@ -43,4 +46,18 @@ message StreamResponse{
   string data = 1;
   bool status = 2;
 }
+
+message ClientStreamingReq{
+  int32 price = 1;
+  int32 quantity = 2;
+  bool status = 3;
+
+}
+
+message ClientStreamingResp{
+  int32 totalValue =1;
+  bool status = 2;
+
+}
+
 

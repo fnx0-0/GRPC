@@ -123,6 +123,38 @@ public final class UserServiceGrpc {
      return getGetLiveUpdatesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.javastub.grpc.User.ClientStreamingReq,
+      com.javastub.grpc.User.ClientStreamingResp> getClientStreamingExampleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ClientStreamingExample",
+      requestType = com.javastub.grpc.User.ClientStreamingReq.class,
+      responseType = com.javastub.grpc.User.ClientStreamingResp.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.javastub.grpc.User.ClientStreamingReq,
+      com.javastub.grpc.User.ClientStreamingResp> getClientStreamingExampleMethod() {
+    io.grpc.MethodDescriptor<com.javastub.grpc.User.ClientStreamingReq, com.javastub.grpc.User.ClientStreamingResp> getClientStreamingExampleMethod;
+    if ((getClientStreamingExampleMethod = UserServiceGrpc.getClientStreamingExampleMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getClientStreamingExampleMethod = UserServiceGrpc.getClientStreamingExampleMethod) == null) {
+          UserServiceGrpc.getClientStreamingExampleMethod = getClientStreamingExampleMethod = 
+              io.grpc.MethodDescriptor.<com.javastub.grpc.User.ClientStreamingReq, com.javastub.grpc.User.ClientStreamingResp>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "UserService", "ClientStreamingExample"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.javastub.grpc.User.ClientStreamingReq.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.javastub.grpc.User.ClientStreamingResp.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("ClientStreamingExample"))
+                  .build();
+          }
+        }
+     }
+     return getClientStreamingExampleMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -169,12 +201,22 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     *streaming
+     *server streaming
      * </pre>
      */
     public void getLiveUpdates(com.javastub.grpc.User.StreamRequest request,
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.StreamResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetLiveUpdatesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *client streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingReq> clientStreamingExample(
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingResp> responseObserver) {
+      return asyncUnimplementedStreamingCall(getClientStreamingExampleMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -200,6 +242,13 @@ public final class UserServiceGrpc {
                 com.javastub.grpc.User.StreamRequest,
                 com.javastub.grpc.User.StreamResponse>(
                   this, METHODID_GET_LIVE_UPDATES)))
+          .addMethod(
+            getClientStreamingExampleMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.javastub.grpc.User.ClientStreamingReq,
+                com.javastub.grpc.User.ClientStreamingResp>(
+                  this, METHODID_CLIENT_STREAMING_EXAMPLE)))
           .build();
     }
   }
@@ -243,13 +292,24 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     *streaming
+     *server streaming
      * </pre>
      */
     public void getLiveUpdates(com.javastub.grpc.User.StreamRequest request,
         io.grpc.stub.StreamObserver<com.javastub.grpc.User.StreamResponse> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGetLiveUpdatesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *client streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingReq> clientStreamingExample(
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingResp> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getClientStreamingExampleMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -290,7 +350,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     *streaming
+     *server streaming
      * </pre>
      */
     public java.util.Iterator<com.javastub.grpc.User.StreamResponse> getLiveUpdates(
@@ -341,6 +401,7 @@ public final class UserServiceGrpc {
   private static final int METHODID_LOGIN = 0;
   private static final int METHODID_LOGOUT = 1;
   private static final int METHODID_GET_LIVE_UPDATES = 2;
+  private static final int METHODID_CLIENT_STREAMING_EXAMPLE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -381,6 +442,9 @@ public final class UserServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CLIENT_STREAMING_EXAMPLE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.clientStreamingExample(
+              (io.grpc.stub.StreamObserver<com.javastub.grpc.User.ClientStreamingResp>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -435,6 +499,7 @@ public final class UserServiceGrpc {
               .addMethod(getLoginMethod())
               .addMethod(getLogoutMethod())
               .addMethod(getGetLiveUpdatesMethod())
+              .addMethod(getClientStreamingExampleMethod())
               .build();
         }
       }
