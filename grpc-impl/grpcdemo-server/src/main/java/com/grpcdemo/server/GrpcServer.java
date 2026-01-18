@@ -5,12 +5,17 @@ import com.userImpl.UserServiceImpl;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.netty.NettyServerBuilder;
 
 public class GrpcServer {
 
     public static void main(String[] args) throws InterruptedException{
 
-        Server server = ServerBuilder.forPort(8083).addService(new UserServiceImpl()).build();//channel creation
+        // Use NettyServerBuilder to allow configuring HTTP/2-related limits to mitigate HTTP/2 attacks
+        Server server = NettyServerBuilder.forPort(8083)
+            .addService(new UserServiceImpl())
+            .maxConcurrentCallsPerConnection(100)
+            .build();
 
         try {
             server.start();

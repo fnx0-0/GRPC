@@ -1,9 +1,12 @@
 package com.userImpl;
 
 
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 import io.grpc.Status;
 
+import com.javastub.grpc.User.BidirectionalStreamReq;
+import com.javastub.grpc.User.BidirectionalStreamResp;
 import com.javastub.grpc.User.ClientStreamingReq;
 import com.javastub.grpc.User.ClientStreamingResp;
 import com.javastub.grpc.User.LoginResponse;
@@ -128,6 +131,36 @@ public class UserServiceImpl extends UserServiceImplBase {
 
             };
 
+        }
+
+
+        @Override
+        public io.grpc.stub.StreamObserver<com.javastub.grpc.User.BidirectionalStreamReq> bidirectionalStream(
+        io.grpc.stub.StreamObserver<com.javastub.grpc.User.BidirectionalStreamResp> responseObserver){
+            
+            return new io.grpc.stub.StreamObserver<com.javastub.grpc.User.BidirectionalStreamReq>(){
+
+                @Override
+                public void onNext(BidirectionalStreamReq req){
+                    System.out.println("Data received " + req + req.getRequestData());
+                    boolean status = true;
+                    String respData = "this is chunk number : " + req.getRequestData();
+                    BidirectionalStreamResp resp = BidirectionalStreamResp.newBuilder().setResponseData(respData).setStatus(status).setTimestamp(LocalDateTime.now().toString()).build();
+                    responseObserver.onNext(resp);
+
+                }
+
+                @Override
+                public void onCompleted(){
+                    responseObserver.onCompleted();
+                }
+
+                @Override
+                public void onError(Throwable e){
+                    System.out.println("Error on processing the request " + e.getMessage());
+                }
+
+            };
         }
     
 }

@@ -4236,6 +4236,1307 @@ public final class User {
 
   }
 
+  public interface BidirectionalStreamReqOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:BidirectionalStreamReq)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string requestData = 1;</code>
+     */
+    java.lang.String getRequestData();
+    /**
+     * <code>string requestData = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRequestDataBytes();
+  }
+  /**
+   * Protobuf type {@code BidirectionalStreamReq}
+   */
+  public  static final class BidirectionalStreamReq extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:BidirectionalStreamReq)
+      BidirectionalStreamReqOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BidirectionalStreamReq.newBuilder() to construct.
+    private BidirectionalStreamReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BidirectionalStreamReq() {
+      requestData_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BidirectionalStreamReq(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestData_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.javastub.grpc.User.internal_static_BidirectionalStreamReq_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.javastub.grpc.User.internal_static_BidirectionalStreamReq_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.javastub.grpc.User.BidirectionalStreamReq.class, com.javastub.grpc.User.BidirectionalStreamReq.Builder.class);
+    }
+
+    public static final int REQUESTDATA_FIELD_NUMBER = 1;
+    private volatile java.lang.Object requestData_;
+    /**
+     * <code>string requestData = 1;</code>
+     */
+    public java.lang.String getRequestData() {
+      java.lang.Object ref = requestData_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestData_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string requestData = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestDataBytes() {
+      java.lang.Object ref = requestData_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRequestDataBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, requestData_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRequestDataBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, requestData_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.javastub.grpc.User.BidirectionalStreamReq)) {
+        return super.equals(obj);
+      }
+      com.javastub.grpc.User.BidirectionalStreamReq other = (com.javastub.grpc.User.BidirectionalStreamReq) obj;
+
+      boolean result = true;
+      result = result && getRequestData()
+          .equals(other.getRequestData());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REQUESTDATA_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestData().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamReq parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.javastub.grpc.User.BidirectionalStreamReq prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code BidirectionalStreamReq}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:BidirectionalStreamReq)
+        com.javastub.grpc.User.BidirectionalStreamReqOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamReq_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamReq_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.javastub.grpc.User.BidirectionalStreamReq.class, com.javastub.grpc.User.BidirectionalStreamReq.Builder.class);
+      }
+
+      // Construct using com.javastub.grpc.User.BidirectionalStreamReq.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        requestData_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamReq_descriptor;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamReq getDefaultInstanceForType() {
+        return com.javastub.grpc.User.BidirectionalStreamReq.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamReq build() {
+        com.javastub.grpc.User.BidirectionalStreamReq result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamReq buildPartial() {
+        com.javastub.grpc.User.BidirectionalStreamReq result = new com.javastub.grpc.User.BidirectionalStreamReq(this);
+        result.requestData_ = requestData_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.javastub.grpc.User.BidirectionalStreamReq) {
+          return mergeFrom((com.javastub.grpc.User.BidirectionalStreamReq)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.javastub.grpc.User.BidirectionalStreamReq other) {
+        if (other == com.javastub.grpc.User.BidirectionalStreamReq.getDefaultInstance()) return this;
+        if (!other.getRequestData().isEmpty()) {
+          requestData_ = other.requestData_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.javastub.grpc.User.BidirectionalStreamReq parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.javastub.grpc.User.BidirectionalStreamReq) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object requestData_ = "";
+      /**
+       * <code>string requestData = 1;</code>
+       */
+      public java.lang.String getRequestData() {
+        java.lang.Object ref = requestData_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          requestData_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string requestData = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRequestDataBytes() {
+        java.lang.Object ref = requestData_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          requestData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string requestData = 1;</code>
+       */
+      public Builder setRequestData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        requestData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestData = 1;</code>
+       */
+      public Builder clearRequestData() {
+        
+        requestData_ = getDefaultInstance().getRequestData();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string requestData = 1;</code>
+       */
+      public Builder setRequestDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        requestData_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:BidirectionalStreamReq)
+    }
+
+    // @@protoc_insertion_point(class_scope:BidirectionalStreamReq)
+    private static final com.javastub.grpc.User.BidirectionalStreamReq DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.javastub.grpc.User.BidirectionalStreamReq();
+    }
+
+    public static com.javastub.grpc.User.BidirectionalStreamReq getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BidirectionalStreamReq>
+        PARSER = new com.google.protobuf.AbstractParser<BidirectionalStreamReq>() {
+      @java.lang.Override
+      public BidirectionalStreamReq parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BidirectionalStreamReq(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BidirectionalStreamReq> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BidirectionalStreamReq> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.javastub.grpc.User.BidirectionalStreamReq getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface BidirectionalStreamRespOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:BidirectionalStreamResp)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string responseData = 1;</code>
+     */
+    java.lang.String getResponseData();
+    /**
+     * <code>string responseData = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResponseDataBytes();
+
+    /**
+     * <code>bool status = 2;</code>
+     */
+    boolean getStatus();
+
+    /**
+     * <code>string timestamp = 3;</code>
+     */
+    java.lang.String getTimestamp();
+    /**
+     * <code>string timestamp = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTimestampBytes();
+  }
+  /**
+   * Protobuf type {@code BidirectionalStreamResp}
+   */
+  public  static final class BidirectionalStreamResp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:BidirectionalStreamResp)
+      BidirectionalStreamRespOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BidirectionalStreamResp.newBuilder() to construct.
+    private BidirectionalStreamResp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BidirectionalStreamResp() {
+      responseData_ = "";
+      status_ = false;
+      timestamp_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BidirectionalStreamResp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseData_ = s;
+              break;
+            }
+            case 16: {
+
+              status_ = input.readBool();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timestamp_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.javastub.grpc.User.internal_static_BidirectionalStreamResp_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.javastub.grpc.User.internal_static_BidirectionalStreamResp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.javastub.grpc.User.BidirectionalStreamResp.class, com.javastub.grpc.User.BidirectionalStreamResp.Builder.class);
+    }
+
+    public static final int RESPONSEDATA_FIELD_NUMBER = 1;
+    private volatile java.lang.Object responseData_;
+    /**
+     * <code>string responseData = 1;</code>
+     */
+    public java.lang.String getResponseData() {
+      java.lang.Object ref = responseData_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseData_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string responseData = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseDataBytes() {
+      java.lang.Object ref = responseData_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private boolean status_;
+    /**
+     * <code>bool status = 2;</code>
+     */
+    public boolean getStatus() {
+      return status_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private volatile java.lang.Object timestamp_;
+    /**
+     * <code>string timestamp = 3;</code>
+     */
+    public java.lang.String getTimestamp() {
+      java.lang.Object ref = timestamp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timestamp_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string timestamp = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTimestampBytes() {
+      java.lang.Object ref = timestamp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timestamp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getResponseDataBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseData_);
+      }
+      if (status_ != false) {
+        output.writeBool(2, status_);
+      }
+      if (!getTimestampBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResponseDataBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseData_);
+      }
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, status_);
+      }
+      if (!getTimestampBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.javastub.grpc.User.BidirectionalStreamResp)) {
+        return super.equals(obj);
+      }
+      com.javastub.grpc.User.BidirectionalStreamResp other = (com.javastub.grpc.User.BidirectionalStreamResp) obj;
+
+      boolean result = true;
+      result = result && getResponseData()
+          .equals(other.getResponseData());
+      result = result && (getStatus()
+          == other.getStatus());
+      result = result && getTimestamp()
+          .equals(other.getTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSEDATA_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseData().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStatus());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.javastub.grpc.User.BidirectionalStreamResp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.javastub.grpc.User.BidirectionalStreamResp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code BidirectionalStreamResp}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:BidirectionalStreamResp)
+        com.javastub.grpc.User.BidirectionalStreamRespOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamResp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamResp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.javastub.grpc.User.BidirectionalStreamResp.class, com.javastub.grpc.User.BidirectionalStreamResp.Builder.class);
+      }
+
+      // Construct using com.javastub.grpc.User.BidirectionalStreamResp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        responseData_ = "";
+
+        status_ = false;
+
+        timestamp_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.javastub.grpc.User.internal_static_BidirectionalStreamResp_descriptor;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamResp getDefaultInstanceForType() {
+        return com.javastub.grpc.User.BidirectionalStreamResp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamResp build() {
+        com.javastub.grpc.User.BidirectionalStreamResp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.javastub.grpc.User.BidirectionalStreamResp buildPartial() {
+        com.javastub.grpc.User.BidirectionalStreamResp result = new com.javastub.grpc.User.BidirectionalStreamResp(this);
+        result.responseData_ = responseData_;
+        result.status_ = status_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.javastub.grpc.User.BidirectionalStreamResp) {
+          return mergeFrom((com.javastub.grpc.User.BidirectionalStreamResp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.javastub.grpc.User.BidirectionalStreamResp other) {
+        if (other == com.javastub.grpc.User.BidirectionalStreamResp.getDefaultInstance()) return this;
+        if (!other.getResponseData().isEmpty()) {
+          responseData_ = other.responseData_;
+          onChanged();
+        }
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        if (!other.getTimestamp().isEmpty()) {
+          timestamp_ = other.timestamp_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.javastub.grpc.User.BidirectionalStreamResp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.javastub.grpc.User.BidirectionalStreamResp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object responseData_ = "";
+      /**
+       * <code>string responseData = 1;</code>
+       */
+      public java.lang.String getResponseData() {
+        java.lang.Object ref = responseData_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseData_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string responseData = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseDataBytes() {
+        java.lang.Object ref = responseData_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string responseData = 1;</code>
+       */
+      public Builder setResponseData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseData_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseData = 1;</code>
+       */
+      public Builder clearResponseData() {
+        
+        responseData_ = getDefaultInstance().getResponseData();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseData = 1;</code>
+       */
+      public Builder setResponseDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseData_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean status_ ;
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public Builder setStatus(boolean value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool status = 2;</code>
+       */
+      public Builder clearStatus() {
+        
+        status_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object timestamp_ = "";
+      /**
+       * <code>string timestamp = 3;</code>
+       */
+      public java.lang.String getTimestamp() {
+        java.lang.Object ref = timestamp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          timestamp_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTimestampBytes() {
+        java.lang.Object ref = timestamp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          timestamp_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       */
+      public Builder setTimestamp(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = getDefaultInstance().getTimestamp();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string timestamp = 3;</code>
+       */
+      public Builder setTimestampBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:BidirectionalStreamResp)
+    }
+
+    // @@protoc_insertion_point(class_scope:BidirectionalStreamResp)
+    private static final com.javastub.grpc.User.BidirectionalStreamResp DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.javastub.grpc.User.BidirectionalStreamResp();
+    }
+
+    public static com.javastub.grpc.User.BidirectionalStreamResp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BidirectionalStreamResp>
+        PARSER = new com.google.protobuf.AbstractParser<BidirectionalStreamResp>() {
+      @java.lang.Override
+      public BidirectionalStreamResp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BidirectionalStreamResp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BidirectionalStreamResp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BidirectionalStreamResp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.javastub.grpc.User.BidirectionalStreamResp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_LoginRequest_descriptor;
   private static final 
@@ -4271,6 +5572,16 @@ public final class User {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ClientStreamingResp_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_BidirectionalStreamReq_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_BidirectionalStreamReq_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_BidirectionalStreamResp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_BidirectionalStreamResp_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4290,13 +5601,18 @@ public final class User {
       "entStreamingReq\022\r\n\005price\030\001 \001(\005\022\020\n\010quanti" +
       "ty\030\002 \001(\005\022\016\n\006status\030\003 \001(\010\"9\n\023ClientStream" +
       "ingResp\022\022\n\ntotalValue\030\001 \001(\005\022\016\n\006status\030\002 " +
-      "\001(\0102\344\001\n\013UserService\022&\n\005Login\022\r.LoginRequ" +
-      "est\032\016.LoginResponse\0221\n\006Logout\022\026.google.p" +
-      "rotobuf.Empty\032\017.LogoutResponse\0223\n\016getLiv" +
-      "eUpdates\022\016.StreamRequest\032\017.StreamRespons" +
-      "e0\001\022E\n\026ClientStreamingExample\022\023.ClientSt" +
-      "reamingReq\032\024.ClientStreamingResp(\001B\023\n\021co" +
-      "m.javastub.grpcb\006proto3"
+      "\001(\010\"-\n\026BidirectionalStreamReq\022\023\n\013request" +
+      "Data\030\001 \001(\t\"R\n\027BidirectionalStreamResp\022\024\n" +
+      "\014responseData\030\001 \001(\t\022\016\n\006status\030\002 \001(\010\022\021\n\tt" +
+      "imestamp\030\003 \001(\t2\262\002\n\013UserService\022&\n\005Login\022" +
+      "\r.LoginRequest\032\016.LoginResponse\0221\n\006Logout" +
+      "\022\026.google.protobuf.Empty\032\017.LogoutRespons" +
+      "e\0223\n\016getLiveUpdates\022\016.StreamRequest\032\017.St" +
+      "reamResponse0\001\022E\n\026ClientStreamingExample" +
+      "\022\023.ClientStreamingReq\032\024.ClientStreamingR" +
+      "esp(\001\022L\n\023BidirectionalStream\022\027.Bidirecti" +
+      "onalStreamReq\032\030.BidirectionalStreamResp(" +
+      "\0010\001B\023\n\021com.javastub.grpcb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4353,6 +5669,18 @@ public final class User {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientStreamingResp_descriptor,
         new java.lang.String[] { "TotalValue", "Status", });
+    internal_static_BidirectionalStreamReq_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_BidirectionalStreamReq_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_BidirectionalStreamReq_descriptor,
+        new java.lang.String[] { "RequestData", });
+    internal_static_BidirectionalStreamResp_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_BidirectionalStreamResp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_BidirectionalStreamResp_descriptor,
+        new java.lang.String[] { "ResponseData", "Status", "Timestamp", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

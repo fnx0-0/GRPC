@@ -20,6 +20,8 @@ service UserService {
   //client streaming
   rpc ClientStreamingExample(stream ClientStreamingReq) returns(ClientStreamingResp);
 
+  //bidirectional streaming
+  rpc BidirectionalStream(stream BidirectionalStreamReq) returns (stream BidirectionalStreamResp);
 
 }
 
@@ -58,6 +60,16 @@ message ClientStreamingResp{
   int32 totalValue =1;
   bool status = 2;
 
+}
+
+message BidirectionalStreamReq{
+  string requestData = 1;
+}
+
+message BidirectionalStreamResp{
+  string responseData = 1;
+  bool status = 2;
+  string timestamp = 3;
 }
 
 
